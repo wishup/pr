@@ -1,0 +1,1 @@
+<?= isset($this->params["main_content"]) ? $this->params["main_content"] : '' ?>

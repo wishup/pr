@@ -1,0 +1,127 @@
+// BB Colors
+$colorDefault: #ffffff !default;
+$colorPrimary: #354d7f !default;
+$colorPrimary2: #204e5f !default;
+$colorPrimary3: #00574e !default;
+$colorInfo: #51a0d7 !default;
+$colorFeatured: #532f48 !default;
+$colorSuccess: #84c359 !default;
+$colorSuccess2: #0f9d58 !default;
+$colorSuccess3: #0f9d58 !default;
+$colorWarning: #f3c62b !default;
+$colorWarning2: #834c21 !default;
+$colorWarning3: #e8deca !default; //used only for backgrounds
+$colorWarning4: #c9c3b3 !default;
+$colorDanger: #c94c3e !default;
+
+
+// BB Background Colors, used only for bg's
+$colorBeige: #faf3e9 !default;
+$colorBeige1: #f3eee3 !default;
+
+
+// BB Border Colors
+$colorBrd1: #e3dccf !default;
+$colorBrd2: #c9c5bb !default;
+
+
+// BB Buttons
+$btnBorderRadius: 5px !default;
+$btnBorderColor: #c9c5bb !default; // used for the .btn-brd
+
+// BB Titles
+
+
+// BB Lines
+$lineColor: #d6d0c2 !default;
+
+
+
+
+
+
+
+// ----------- OLD VERSION ----------- //
+$main-background: #f3eee3;
+$foreground: #fff;
+
+$dark-color: #000;
+$light-color: #fff;
+//$border-color:#e7e6e6;
+$border-color:#e5e0d5;
+$border-color2:#cccccb;
+//$inner2-background: #efefef;
+$inner2-background: #f0ede6;
+$blue-dark: #083d66;
+$red-dark: #b30803;
+
+$brown: #834c21;
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+$gray-base:              #231f20 !default;
+//$gray-light:             rgba(99, 103, 112, 0.54) !default;
+$gray-light:             #464646 !default;
+$gray-lighter:           rgba(99, 103, 112, 0.8) !default;
+
+$brand-featured:        #532f48 !default;
+$brand-primary:         #354d7f !default;
+$brand-primary2:        #204e5f !default;
+$brand-success:         #84c359 !default;
+$brand-success2:        #0f9d58 !default;
+$brand-info:            #51a0d7 !default;
+$brand-warning:         #f3c62b !default;
+$brand-danger:          #e14f5f !default;
+
+
+
+$state-success-text:             $brand-success;
+$state-success-bg:               $brand-success;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:                $brand-info;
+$state-info-bg:                  $brand-info;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:             $brand-warning;
+$state-warning-bg:               $brand-warning;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:              $brand-danger;
+$state-danger-bg:                $brand-danger;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+//** Background color for `<body>`.
+//$body-bg:               #fff !default;
+//** Global text color on `<body>`.
+$text-color:            $gray-base !default;
+//** Global textual link color.
+$link-color:            $gray-base !default;
+//** Link hover color set via `darken()` function.
+//$link-hover-color:      darken($link-color, 15%) !default;
+//** Link hover decoration.
+//$link-hover-decoration: underline !default;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'montserratlight' !default;
+
+$font-size-h1:            6rem !default;
+$font-size-h2:            4.5rem !default;
+$font-size-h3:            3rem !default;
+$font-size-h4:            2.4rem !default;
+$font-size-h5:            20px !default;
+$font-size-h6:            16px !default;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     9px !default;
+$padding-base-horizontal:   24px !default;
+
+$padding-large-vertical:    12px !default;
+$padding-large-horizontal:  30px !default;

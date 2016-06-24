@@ -1,0 +1,8 @@
+{
+  "name": "BibleBee",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "tipsy": "~0.1.7"
+  }
+}

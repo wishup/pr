@@ -1,0 +1,67 @@
+.adminpanel_container{
+    position:fixed;
+    top:10px;
+    right:30px;
+    opacity:0.5;
+    z-index:99999;
+    box-sizing:border-box
+}
+
+.adminpanel_container:hover{
+    opacity:1
+}
+
+.adminpanel_container .right{
+    float:right
+}
+/*.live_edit_field{
+    text-align:left;
+}*/
+
+.live_edit_field:hover{
+    display:block;
+    outline:dashed 2px #999;
+    outline-offset:8px;
+    cursor:crosshair
+}
+.live_edit_field .row.form-group{
+    margin-left:0;
+    margin-right:0;
+}
+.live_edit_field .live_edit_field_textarea,
+.live_edit_field .live_edit_field_save {
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+}
+.live_edit_field_textarea{
+    border: 1px solid #ccc !important;
+    pointer-events: inherit !important;
+    background: #fff !important;
+}
+.live_edit_field .live_edit_field_save{
+    font-size:17px;
+    font-family: 'montserratlight';
+    width:auto;
+    padding:6px 12px;
+    margin:0;
+    letter-spacing: 0;
+    min-width:inherit;
+    color:#fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.adminpanel_container .btn-sm{
+    font-size:10px;
+}
+
+.live_edit_field_inline{
+    cursor:crosshair;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}

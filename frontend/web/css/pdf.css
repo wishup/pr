@@ -1,0 +1,24 @@
+ul{
+    list-style:none;
+}
+.faq-list{
+    margin:0;
+    padding:0;
+}
+.faq-list li ul li{
+    padding:0 0 15pt;
+}
+.letter{
+    margin:0 0 15pt;
+    padding:0 0 10pt;
+    border-bottom:dotted 1px #000000;
+}
+.letter-result{
+    margin:0 0 5pt;
+}
+
+@page {
+    /* ensure you append the header/footer name with 'html_' */
+    /*header: html_standartHeader;*/
+    footer: html_standartFooter;
+}

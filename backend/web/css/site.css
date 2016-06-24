@@ -1,0 +1,551 @@
+.layout_section{
+    border:solid 1px #ccc;
+    padding:20px;
+    vertical-align: top;
+    position:relative;
+    background-color:#f9f9f9
+}
+
+.layout_section label{
+    color:#ccc;
+    font-size:34px;
+    line-height:34px;
+}
+
+.layout_section label small{
+    color:#ccc;
+    font-size:16px;
+    line-height:34px;
+}
+
+.layout_header{
+    height:110px;
+}
+
+.layout_left, .layout_right{
+    width:25%;
+    height:350px
+}
+
+.layout_center{
+    width:50%
+}
+
+.layout_footer{
+    height:110px;
+}
+
+.disable_section{
+    position:absolute;
+    top:0px;
+    left:0px;
+    text-align:left;
+    background-color:#eee;
+    opacity:0.7;
+    display:none
+}
+
+.disable_section .disable_section_cont{
+    padding:10px;
+}
+
+.layout_section:hover .disable_section{
+    display:block
+}
+
+.disabled_section .disable_section{
+    display:block
+}
+
+.disabled_section{
+    border-color:#F75959;
+}
+
+.section_widget_area{
+    margin-top:25px;
+    color:#aaa
+}
+
+.section_widget_area select{
+    max-width:300px
+}
+
+.section_widget_area_tmpl{
+    display:none
+}
+
+.wdg_area_s{
+    margin-bottom:5px;
+}
+
+.widget_attached_files{
+    font-size:12px;
+}
+
+.widget_del_attach{
+    color:#990000;
+    float:right
+}
+
+.favorite_url_small{
+    font-size:12px
+}
+
+.add_to_favorites_btn{
+    font-size: 18px!important;
+    color: #fff;
+    padding: 0px!important;
+    height: 30px!important;
+    line-height: 30px!important;
+    width: 30px!important;
+    text-align: center!important;
+    background-image: none!important;
+}
+
+.favorite_row .remove_favorite_btn{
+    float:right;
+    display:none
+}
+
+.favorite_row:hover .remove_favorite_btn{
+    display:block
+}
+
+.table-white-bg, .white-bg{
+    background-color:#fff!important;
+}
+
+.right_bar_link{
+    color:#99a8b5!important;
+    text-decoration:none!important
+}
+
+.table{
+    background-color:#fff
+}
+
+.custom-tab-content{
+    background-color:#fff;
+    padding:15px;
+    border: 1px solid #ddd;
+    border-top:none
+}
+
+.custom-nav-tabs{
+    margin-bottom:0px;
+}
+
+.margin-bottom10{ margin-bottom:10px; }
+.margin-bottom20{ margin-bottom:20px; }
+.margin-bottom30{ margin-bottom:30px; }
+.margin-bottom40{ margin-bottom:40px; }
+.margin-bottom50{ margin-bottom:50px; }
+.margin-top10{ margin-top:10px; }
+.margin-top20{ margin-top:20px; }
+.margin-top30{ margin-top:30px; }
+.margin-top40{ margin-top:40px; }
+.margin-top50{ margin-top:50px; }
+
+.rl_add_filter{
+    margin-left:50px
+}
+
+#locator_table_filter{
+    display:none
+}
+
+
+.widget_area_title{
+    cursor:pointer
+}
+
+.create_warea{
+    margin-top:25px;
+}
+
+.send_email_to{
+    margin-bottom:5px;
+}
+
+.favorite_row{
+    overflow:hidden
+}
+
+
+/**
+ * ADMIN: statistic section
+ */
+.statistic-block {
+    margin-bottom: 30px;
+}
+
+.statistic-row,
+.statistic-sub-row {
+    margin-bottom: 5px;
+    color: #5C9ACF;
+}
+
+.statistic-row .statistic-name {
+    width: 200px;
+    display: inline-block;
+}
+
+.statistic-sub-row {
+    margin-left: 30px;
+}
+
+.statistic-sub-row  .statistic-name {
+    width: 170px;
+    display: inline-block;
+}
+
+
+/**
+ * ADMIN: customer service
+ */
+ 
+.cs_status_td {
+	white-space: nowrap;
+	text-align: center;    
+}
+
+.cs-status-checkbox-wrap {
+	font-size: 15px;
+	line-height: 19px;
+	width: 34px;
+	height: 34px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 5px;
+	text-align: center;		
+	border: 1px solid #c2cad8;
+	position: relative;
+	cursor: pointer;
+	
+}
+
+.cs-status-checkbox-wrap > span,
+.cs-status-checkbox-wrap > .checker {
+	margin-top: 7px !important;
+	display: inline-block;
+}
+
+.cs-status-checkbox-wrap:last-child {
+	margin-right: 0;
+}
+
+.cs-status-checkbox-wrap:before{
+    top: -8px;
+    right: -8px;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.cs-status-checkbox-list {
+	width: 50px;
+    padding: 5px 10px;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    z-index: 2;
+    display: none;
+}
+
+.cs-status-checkbox-list.active{
+    display: block;
+}
+
+.cs-status-checkbox {
+    width: 100%;
+    height: 23px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    margin: 5px 0;
+    border: 1px solid transparent;
+}
+
+.cs-status-checkbox[data-status = "cs-status0"] {
+    border-color: #d6d6d6;
+    position: relative;
+}
+
+.cs-status-checkbox[data-status = "cs-status0"]:before {
+    content: "";
+	top: 10px;
+    left: -3px;    
+    width: 33px;
+    height: 1px;
+	position: absolute;
+    background-color: red;
+    -webkit-transform: rotate(-37deg);
+    -moz-transform: rotate(-37deg);
+    -ms-transform: rotate(-37deg);
+    transform: rotate(-37deg);
+}
+
+/* Status Filters */
+.cs-status-filter {
+    width: 34px;
+    height: 34px;
+    position: relative;
+	display:inline-block;
+	margin-right: 5px;
+}
+
+.cs-status-filter:last-child {
+	margin-right: 0;
+}
+
+.cs-status-filter span,
+.cs-status-filter select {
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    border: 1px solid #c2cad8;
+}
+
+.cs-status-filter select {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    visibility: hidden;
+    position: absolute;
+    -webkit-appearance: menulist-button;
+}
+
+.cs-status-filter span {
+    position: relative;
+    display: block;
+	cursor: pointer;
+    z-index: 2;
+}
+
+.cs-status-filter ul {
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    margin: 1px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    border: 1px solid #c2cad8;
+}
+
+.cs-status-filter ul li {
+    width: 100%;
+    height: 25px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+
+/* Status Colors */
+.table-bordered-users .cs-status-checkbox-wrap.cs-status0 { }
+.table-bordered-users .cs-status-checkbox-wrap.cs-status1 { background-color: #fff200 !important; }
+.table-bordered-users .cs-status-checkbox-wrap.cs-status2 { background-color: #fb7c1f !important; }
+.table-bordered-users .cs-status-checkbox-wrap.cs-status3 { background-color: #39b54a !important; }
+.table-bordered-users .cs-status-checkbox-wrap.cs-status4 { background-color: #eb1f48 !important; }
+
+
+.cs-status-filter.cs-status0 span,
+.cs-status-filter ul li[data-value="0"],
+.cs-status-checkbox[data-status = "cs-status0"],
+.table-bordered-users tr.cs-status0 .cs_status_td {
+    background-color: #fff;
+}
+
+.cs-status-filter.cs-status1 span,
+.cs-status-filter ul li[data-value="1"],
+.cs-status-checkbox[data-status = "cs-status1"],
+.table-bordered-users tr.cs-status1 .cs_status_td {
+    background-color: #fff200;
+}
+
+.cs-status-filter.cs-status2 span,
+.cs-status-filter ul li[data-value="2"],
+.cs-status-checkbox[data-status = "cs-status2"],
+.table-bordered-users tr.cs-status2 .cs_status_td {
+    background-color: #fb7c1f;
+}
+
+.cs-status-filter.cs-status3 span,
+.cs-status-filter ul li[data-value="3"],
+.cs-status-checkbox[data-status = "cs-status3"],
+.table-bordered-users tr.cs-status3 .cs_status_td {
+    background-color: #39b54a;
+}
+
+.cs-status-filter.cs-status4 span,
+.cs-status-filter ul li[data-value="4"],
+.cs-status-checkbox[data-status = "cs-status4"],
+.table-bordered-users tr.cs-status4 .cs_status_td {
+    background-color: #eb1f48;
+}
+
+.table-bordered-users thead .cs_status_td a {
+    width: 34px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+#cs-csatus-popover .btn {
+    margin-left: 5px;
+}
+
+.cs_status-popover{
+    max-width: none;
+}
+
+/**
+ * Admin: User Notes
+ */
+
+.note-content-td {
+    text-align: center;
+}
+
+.users-notes-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.note-box {
+    top: 0;
+    right: 0;
+    width: 320px;
+    z-index: 10;
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #c2c1be;
+    border-radius: 2px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+}
+
+.note-box-cont {
+    padding: 15px;
+}
+
+.note-boc-cont .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.note-box-foot {
+    margin: 0 15px;
+    padding: 15px 0;
+    border-top: 1px solid #c2c1be;
+}
+
+.note-box-foot .btn {
+    margin: 0 !important;
+    line-height: 1 !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.note-create-box .note-view-all {
+    margin-top: 5px;
+}
+
+.note-box-cont .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.note-box-cont p {
+    margin: 0 0 10px 0;
+}
+
+.note-box-cont p:last-child {
+    margin-bottom: 0;
+}
+
+.note-box-cont label {
+    color: #337ab7;
+    font-weight: 700;
+}
+
+.note-autor {
+    color: #337ab7;
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
+}
+
+.note-date {
+    font-size: 12px;
+}
+
+.note-text {
+    color: #000;
+}
+
+.note-view-all {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.table-user-notes td {
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.table-user-notes .td1 {
+    width: 60%;
+    text-align: left;
+}
+
+.table-user-notes .td2 {
+    width: 40%;
+    text-align: right;
+}
+
+.user-notes {
+    padding-right: 120px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.user-notes .users-notes-wrap {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 120px;
+}
+
+.gridview_bottom ul.pagination{
+    margin:0px;
+}
+
+.action_buttons{
+    margin-top:-50px;
+    float:right
+}
+
+/*.user-notes .note-create,
+.user-notes .note-view {
+    top: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+}*/
+
+.models_row td{
+    border-right-color:#888!important;
+}
+
+.filters td{
+    padding: 8px 4px 8px 4px!important;
+}
+
+.page-content {
+    padding-right:30px!important;
+}

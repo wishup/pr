@@ -1,0 +1,224 @@
+/**
+ * Widgets
+ */
+.wdg-section {
+  padding: 70px 20px;
+}
+
+.wdg-section-wide {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.bgimg-fixed {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.bgimg-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bgimg-top-cover { // Background image with
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.bgimg-rigt-top {
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.bgimg-rigt-btm {
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+
+
+
+
+
+@media(max-width: 767px){
+  .wdg-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.wdg-container-lg {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+
+/**
+ * Widget Individual Styles
+ * NOTE! Please remove widget styles when removing appropriate widget from the admin
+ */
+
+// Home: Widget Grab Friends
+#wdg-grab-friends {
+  @media(max-width: 1200px) {
+    &.bgimg-rigt-top {
+      background-size: 60% auto;
+      background-position: right bottom;
+    }
+  }
+
+  @media(max-width: 767px) {
+    blockquote {
+      padding-right: 45%;
+    }
+
+    &.bgimg-rigt-top {
+      background-size: 60% auto;
+      background-position: right bottom;
+    }
+  }
+
+  @media(max-width: 480px) {
+    padding-bottom: 72%;
+
+    blockquote {
+      padding-right: 0;
+    }
+
+    &.bgimg-rigt-top {
+      background-size: 100% auto;
+    }
+  }
+}
+
+// Home: Widget Chance To Win
+#wdg-chance-to-win {
+  .embed-responsive-wrap {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  @media(max-width: 480px) {
+    .embed-responsive-wrap {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+}
+
+// Register: Widget 01
+#wdg-register-01 {
+  padding-bottom: 40px;
+  .container {
+    padding-top: 50px;
+  }
+  .alignleft {
+    width: 50%;
+    margin: 0 25px 0 5%;
+  }
+  @media (max-width: 992px) {
+    .alignleft {
+      width: 40%;
+    }
+  }
+  @media (max-width: 767px) {
+    .alignleft {
+      width: auto;
+      margin: 0 0 -20px 0;
+    }
+  }
+}
+
+// Who We Are
+#wdg-who-we-are {
+  padding-top: 115px;
+  padding-bottom: 115px;
+}
+
+#wdg-core-values {
+  .text {
+    line-height: 1.1;
+  }
+}
+
+
+
+
+
+
+/** Widget: Directors List */
+.wdg-directors-list div[class^="col-sm"] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.wdg-directors-list div[class^="col-sm"]:before {
+  content: '';
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  height: 0;
+  position: absolute;
+  border-bottom: 1px solid $colorBrd1;
+}
+
+
+/** Widget: Ministry Partners */
+.ministry-partners {
+  font-size: 2rem;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .row > div {
+    position: relative;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+
+    &:after {
+      left: 0;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      height: 1px;
+      background-color: #e3dccf;
+    }
+  }
+
+  .valign-cell:first-child {
+    width: 25%;
+    padding-right: 5%;
+  }
+
+  .valign-cell:last-child {
+    width: 75%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ministry-partners {
+    .valign,
+    .valign-cell {
+      display: block;
+    }
+
+    .valign-cell {
+      width: 100% !important;
+    }
+
+    .valign-cell:first-child {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+}
