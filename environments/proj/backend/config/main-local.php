@@ -23,7 +23,7 @@ if (!YII_ENV_TEST) {
             'crud' => [ // generator name
                 'class' => 'yii\gii\generators\crud\Generator', // generator class
                 'templates' => [ //setting for out templates
-                    'BibleBee Crud' => '@app/crud/default', // template name => path to template
+                    'Project Crud' => '@app/crud/default', // template name => path to template
                 ]
             ]
         ],

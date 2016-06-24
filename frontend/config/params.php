@@ -5,7 +5,7 @@ return [
     'adminEmail' => 'admin@example.com',
     'defaultLayout' => 'main',
     'seo_title_separator' => '-',
-    'seo_default_title' => 'BibleBee',
+    'seo_default_title' => 'Project',
     'seo_default_meta_description' => '',
     'seo_default_meta_keywords' => '',
     'publicActions' => [
