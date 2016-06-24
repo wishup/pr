@@ -285,11 +285,7 @@ class m151124_141059_create_tables extends Migration
 		$this->addForeignKey('fk_widgets_in_areas_widget_id', '{{%widgets_in_areas}}', 'widget_id', '{{%widgets}}', 'id', 'CASCADE', 'CASCADE');
 		$this->addForeignKey('fk_widgets_in_areas_area_id', '{{%widgets_in_areas}}', 'area_id', '{{%widgets_areas}}', 'id', 'CASCADE', 'CASCADE');
 		
-		$this->insert('{{%layouts}}', [
-            "id" => "1",
-            "url" => '',
-            "parent_id" => '0',
-        ]);
+
 
 		$this->insert('{{%user}}', [
 			"id" => "1",

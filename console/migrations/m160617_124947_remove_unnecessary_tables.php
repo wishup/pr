@@ -152,6 +152,15 @@ class m160617_124947_remove_unnecessary_tables extends Migration
             "slug" => 'adminmessages',
             "description" => '',
         ]);
+
+        $this->insert('{{%layouts}}', [
+            "id" => "1",
+            "url" => '',
+            "parent_id" => '0',
+            "title" => 'Main',
+            "homepage" => '0',
+            "layout_file" => 'wide_content',
+        ]);
     }
 
     public function safeDown()
