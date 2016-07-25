@@ -14,7 +14,7 @@ $image = "logo2.png";
         <?php
         if (!$user_id = \common\models\Users::user_id()) {
             ?>
-            <a href="/user/login" class="host-login"> <?= LiveEdit::text(__FILE__, 'Host login') ?> <i
+            <a href="<?= Yii::$app->homeUrl ?>user/login" class="host-login"> <?= LiveEdit::text(__FILE__, 'Host login') ?> <i
                     class="icon-arrow-right"></i></a>
         <?php
         } else {
