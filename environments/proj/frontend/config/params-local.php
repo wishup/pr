@@ -1,6 +1,6 @@
 <?php
 $connection = new \yii\db\Connection([
-    'dsn' => 'mysql:host=localhost;dbname=project',
+    'dsn' => 'mysql:host=localhost;dbname=pr',
     'username' => 'root',
     'password' => '',
 ]);

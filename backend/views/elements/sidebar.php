@@ -117,6 +117,11 @@ function renderSidebar( $items, $roles ){
 
         ["label"=>"Discounts", "icon"=>"ticket", "url"=>Yii::$app->homeUrl."discount", "roles"=>["Superadmin", "Admin"]],
 
+        ["heading"=>"Shop", "roles"=>["Superadmin", "Admin"]],
+        ["label"=>"Categories", "icon"=>"user", "url"=>Yii::$app->homeUrl."shopcategories/index", "roles"=>["Superadmin", "Admin"]],
+        ["label"=>"Products", "icon"=>"user", "url"=>Yii::$app->homeUrl."shopproducts/index", "roles"=>["Superadmin", "Admin"]],
+        ["label"=>"Product attributes", "icon"=>"user", "url"=>Yii::$app->homeUrl."shopproductsattributes/index", "roles"=>["Superadmin", "Admin"]],
+
         ["heading"=>"CMS", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Users", "icon"=>"user", "url"=>Yii::$app->homeUrl."users/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Email Templates", "icon"=>"envelope-o", "url"=>"#", "roles"=>["Superadmin", "Admin"], "items" => [

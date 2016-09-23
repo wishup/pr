@@ -549,3 +549,7 @@
 .page-content {
     padding-right:30px!important;
 }
+
+.thumbimg{
+    max-height:150px;
+}
