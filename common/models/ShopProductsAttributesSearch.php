@@ -19,7 +19,7 @@ class ShopProductsAttributesSearch extends ShopProductsAttributes
     {
         return [
             [['id'], 'integer'],
-            [['name'], 'safe'],
+            [['name', 'slug'], 'safe'],
         ];
     }
 
@@ -68,6 +68,7 @@ class ShopProductsAttributesSearch extends ShopProductsAttributes
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name]);
+        $query->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;
     }

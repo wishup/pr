@@ -53,7 +53,14 @@ class ShopProducts extends \yii\db\ActiveRecord
 
     public function getCategories()
     {
-        return $this->hasMany(ShopCategories::className(), ['id' => 'product_id'])
-            ->viaTable(ShopProdCat::tableName(), ['category_id' => 'id']);
+
+        return $this->hasMany(ShopCategories::className(), ['id' => 'category_id'])
+            ->viaTable(ShopProdCat::tableName(), ['product_id' => 'id']);
+    }
+
+    public function getProdcat(){
+
+        return $this->hasOne(ShopProdCat::className(), ['product_id' => 'id']);
+
     }
 }

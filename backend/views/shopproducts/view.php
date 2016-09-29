@@ -24,12 +24,25 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </div>
     <?php
-    echo '<pre>'; print_r( $model->getCategories() ); die;
+    $categories = $model->categories;
+
+    $cats = [];
+
+    foreach( $categories as $cat ){
+
+        $cats[] = $cat->name;
+
+    }
+
     ?>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
+            'categories' => [
+                "label" => "Categories",
+                "value" => implode(", ", $cats)
+            ],
             'name',
             'description:html',
             'price',

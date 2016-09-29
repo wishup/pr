@@ -12,6 +12,42 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?php
+    $items = [];
+
+    function getCats( &$items, $parent=0, $level=0, $ignorecat_id = 0 ){
+
+        if( $cats = \common\models\ShopCategories::find()->where("parent_id=".$parent)->orderBy("name")->all() ){
+
+            foreach( $cats as $cat ){
+
+                if( $cat->id == $ignorecat_id ) continue;
+
+                $suff = '';
+
+                for( $i=0; $i<$level; $i++ ){
+                    $suff .= '     ';
+                }
+
+                $items[ $cat->id ] = $suff.$cat->name;
+
+                getCats($items, $cat->id, $level+1, $ignorecat_id);
+
+            }
+
+        }
+
+    }
+
+    getCats( $items, 0, 0, 0 );
+    ?>
+
+    <div class="form-group">
+        <label>Categories</label>
+        <?= Html::dropDownList('categories[]', $model->isNewRecord ? [] : \yii\helpers\ArrayHelper::map(\common\models\ShopProdCat::find()->where("product_id=".$model->id)->all(), 'category_id', 'category_id'), $items, ['encodeSpaces'=>true, 'multiple' => true, 'class'=>'form-control', 'size' => 10]) ?>
+    </div>
+
+
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?php
@@ -54,6 +90,46 @@ use yii\widgets\ActiveForm;
     <?php
     }
     ?>
+
+
+    <?php
+    if( $attributes = \common\models\ShopProductsAttributes::find()->orderBy("name")->all() ){
+
+        ?>
+        <p>&nbsp;</p>
+        <h3>Attributes</h3>
+        <?php
+
+        foreach( $attributes as $attribute ){
+
+            ?>
+            <div class="row">
+                <div class="col-sm-2">
+                    <?= $attribute->name ?>
+                </div>
+                <div class="col-sm-4">
+                    <?php
+                    if( !$model->isNewRecord ){
+                        if( $prodattr = \common\models\ShopProductsAttrVals::find()->where("product_id=".$model->id." and attribute_id=".$attribute->id)->one() ){
+                            $val = $prodattr->value;
+                        } else
+                            $val = '';
+
+                    } else
+                        $val = '';
+                    ?>
+                    <div class="form-group">
+                        <?= Html::textInput("attributes[".$attribute->id."]", $val, ["class" => "form-control"]) ?>
+                    </div>
+                </div>
+            </div>
+            <?php
+
+        }
+
+    }
+    ?>
+    <p>&nbsp;</p>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

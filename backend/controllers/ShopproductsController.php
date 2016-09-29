@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\ShopProdCat;
 use Yii;
 use common\models\ShopProducts;
 use common\models\ShopProductsSearch;
@@ -107,6 +108,42 @@ class ShopproductsController extends BaseController
             }
 
             if( $model->save() ){
+
+                if(Yii::$app->request->post("categories"))
+                    foreach( Yii::$app->request->post("categories") as $category_id ){
+
+                        if( !$prodcat = ShopProdCat::find()->where("product_id=".$model->id." and category_id=".(int)$category_id)->one() ) {
+                            $prodcat = new ShopProdCat();
+                            $prodcat->product_id = $model->id;
+                            $prodcat->category_id = (int)$category_id;
+                            $prodcat->save();
+                        }
+
+                    }
+
+                if( Yii::$app->request->post("attributes") ){
+                    foreach( Yii::$app->request->post("attributes") as $attribute_id => $attribute_val ){
+
+                        if( $attribute_val != '' ){
+
+                            if( !$prodattr = \common\models\ShopProductsAttrVals::find()->where("product_id=".$model->id." and attribute_id=".$attribute_id)->one() )
+                                $prodattr = new \common\models\ShopProductsAttrVals();
+
+                            $prodattr->product_id = $model->id;
+                            $prodattr->attribute_id = (int)$attribute_id;
+                            $prodattr->value = $attribute_val;
+
+                            $prodattr->save();
+
+                        } else {
+
+                            \common\models\ShopProductsAttrVals::deleteAll("product_id=".$model->id." and attribute_id=".$attribute_id);
+
+                        }
+
+                    }
+                }
+
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 return $this->render('create', [
@@ -132,9 +169,9 @@ class ShopproductsController extends BaseController
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) ) {
+        $old_image = $model->image;
 
-            $old_image = $model->image;
+        if ($model->load(Yii::$app->request->post()) ) {
 
             if( $model->image =UploadedFile::getInstance($model,'image') ) {
 
@@ -148,6 +185,43 @@ class ShopproductsController extends BaseController
             }
 
             if( $model->save() ){
+
+                ShopProdCat::deleteAll("product_id=".$model->id.( Yii::$app->request->post("categories") ? " AND `category_id` NOT IN (".implode(",", Yii::$app->request->post("categories")).")" : "" ));
+
+                if(Yii::$app->request->post("categories"))
+                    foreach( Yii::$app->request->post("categories") as $category_id ){
+
+                        if( !$prodcat = ShopProdCat::find()->where("product_id=".$model->id." and category_id=".(int)$category_id)->one() ) {
+                            $prodcat = new ShopProdCat();
+                            $prodcat->product_id = $model->id;
+                            $prodcat->category_id = (int)$category_id;
+                            $prodcat->save();
+                        }
+
+                    }
+
+                if( Yii::$app->request->post("attributes") ){
+                    foreach( Yii::$app->request->post("attributes") as $attribute_id => $attribute_val ){
+
+                        if( $attribute_val != '' ){
+
+                            if( !$prodattr = \common\models\ShopProductsAttrVals::find()->where("product_id=".$model->id." and attribute_id=".$attribute_id)->one() )
+                                $prodattr = new \common\models\ShopProductsAttrVals();
+
+                            $prodattr->product_id = $model->id;
+                            $prodattr->attribute_id = (int)$attribute_id;
+                            $prodattr->value = $attribute_val;
+
+                            $prodattr->save();
+
+                        } else {
+
+                            \common\models\ShopProductsAttrVals::deleteAll("product_id=".$model->id." and attribute_id=".$attribute_id);
+
+                        }
+
+                    }
+                }
 
                 return $this->redirect(['view', 'id' => $model->id]);
 

@@ -26,7 +26,9 @@ class ShopProductsAttributes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'string', 'max' => 200],
+            [['name', 'slug'], 'string', 'max' => 200],
+            [["name", "slug"], "required"],
+            ["slug", "unique"]
         ];
     }
 
@@ -38,6 +40,7 @@ class ShopProductsAttributes extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'slug' => 'Slug',
         ];
     }
 }

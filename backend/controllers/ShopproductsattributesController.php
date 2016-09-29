@@ -43,8 +43,9 @@ class ShopproductsattributesController extends BaseController
             'dataProvider' => $dataProvider,
             'grid_fields' => [
 
-                        'id',
+                        //'id',
             'name',
+                'slug',
 
             ['class' => 'yii\grid\ActionColumn'],
             ],
