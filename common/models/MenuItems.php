@@ -125,7 +125,7 @@ class MenuItems extends \yii\db\ActiveRecord
                 $selected = 1;
             }
 
-            $item_arr = ['label' => $im->name, 'options'=>['class'=>( count($subitems) > 0 ? 'hassubnav' : '' ).$class], 'selected'=>$selected];
+            $item_arr = ['label' => $im->name, 'template' => '<a href="{url}" class="'.( count($subitems) > 0 ? ' drop-link ' : '' ).'">{label}'.( count($subitems) > 0 ? '<i class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i>' : '').'</a>', 'options'=>['class'=>$class], 'selected'=>$selected];
 
             if( $item_url != '' ) $item_arr["url"] = $item_url;
 

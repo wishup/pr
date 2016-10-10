@@ -24,14 +24,18 @@ $this->params["main_content"] = $content;
     if( isset($params['favicon'])): ?>
         <link rel="icon" href="<?php echo Yii::$app->homeUrl;?>upload/<?php echo $params['favicon'];?>" type="image/x-icon" />
     <?php endif;?>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
-    <?php $this->head() ?>
-    <link href='<?php echo Yii::$app->homeUrl;?>icon_fonts/style.css' rel='stylesheet' type='text/css'>
-    <link href="<?php echo Yii::$app->homeUrl;?>js/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::$app->homeUrl;?>css/md-slider.css" />
-    <link href="<?php echo Yii::$app->homeUrl;?>css/main.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo Yii::$app->homeUrl;?>css/jquery-ui.min.css" rel='stylesheet' type='text/css'>
+    <!-- include the site stylesheet -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic%7cMontserrat:400,700%7cOxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="/css/animate.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="/css/icon-fonts.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="/css/responsive.css">
 
 </head>
 <body class="<?= ( !isset($this->params["bodyClassDefault"]) || (isset($this->params["bodyClassDefault"]) && $this->params["bodyClassDefault"]) ) ? 'layout1' : '' ?> <?= isset($this->params["bodyClass"]) ? $this->params["bodyClass"] : '' ?>">
@@ -47,61 +51,72 @@ if( !isset($this->params['layout_settings']['settings']['section_top_active']) |
 
 }
 ?>
-<section class="main">
-    <div class="row">
-        <?php
-        if( !isset($this->params['layout_settings']['settings']['section_left_active']) || $this->params['layout_settings']['settings']['section_left_active'] == 1 ){
-
-            echo '<div class="col-sm-3">';
-
-            if( isset($this->params['layout_settings']['widgets']['left']) )
-
-                foreach( $this->params['layout_settings']['widgets']['left'] as $wa_id )
-                    echo \common\components\Widgetareas::showSectionWidget($wa_id);
-
-            echo '</div>';
-
-        }
-
-        $center_width = 12;
-
-        if( !isset($this->params['layout_settings']['settings']['section_left_active']) || $this->params['layout_settings']['settings']['section_left_active'] == 1 ) $center_width-=4;
-        if( !isset($this->params['layout_settings']['settings']['section_right_active']) || $this->params['layout_settings']['settings']['section_right_active'] == 1 ) $center_width-=4;
-
-        ?>
-        <div class="col-sm-<?= $center_width ?>">
+<!-- main container of all the page elements -->
+<div id="wrapper">
+    <!-- Page Loader -->
+    <div id="pre-loader" class="loader-container">
+        <div class="loader">
+            <img src="/images/svg/rings.svg" alt="loader">
+        </div>
+    </div>
+    <!-- W1 start here -->
+    <div class="w1">
+        <div class="row">
             <?php
-            // echo Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],])
-            ?>
-            <?= Alert::widget() ?>
-            <?php
-            if( !isset($this->params['layout_settings']['settings']['section_center_active']) || $this->params['layout_settings']['settings']['section_center_active'] == 1 ){
+            if( !isset($this->params['layout_settings']['settings']['section_left_active']) || $this->params['layout_settings']['settings']['section_left_active'] == 1 ){
 
-                if( isset($this->params['layout_settings']['widgets']['center']) )
+                echo '<div class="col-sm-3">';
 
-                    foreach( $this->params['layout_settings']['widgets']['center'] as $wa_id )
+                if( isset($this->params['layout_settings']['widgets']['left']) )
+
+                    foreach( $this->params['layout_settings']['widgets']['left'] as $wa_id )
                         echo \common\components\Widgetareas::showSectionWidget($wa_id);
+
+                echo '</div>';
+
+            }
+
+            $center_width = 12;
+
+            if( !isset($this->params['layout_settings']['settings']['section_left_active']) || $this->params['layout_settings']['settings']['section_left_active'] == 1 ) $center_width-=4;
+            if( !isset($this->params['layout_settings']['settings']['section_right_active']) || $this->params['layout_settings']['settings']['section_right_active'] == 1 ) $center_width-=4;
+
+            ?>
+            <div class="col-sm-<?= $center_width ?>">
+                <?php
+                // echo Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],])
+                ?>
+                <?= Alert::widget() ?>
+                <?php
+                if( !isset($this->params['layout_settings']['settings']['section_center_active']) || $this->params['layout_settings']['settings']['section_center_active'] == 1 ){
+
+                    if( isset($this->params['layout_settings']['widgets']['center']) )
+
+                        foreach( $this->params['layout_settings']['widgets']['center'] as $wa_id )
+                            echo \common\components\Widgetareas::showSectionWidget($wa_id);
+
+                }
+                ?>
+
+            </div>
+            <?php
+            if( !isset($this->params['layout_settings']['settings']['section_right_active']) || $this->params['layout_settings']['settings']['section_right_active'] == 1 ){
+
+                echo '<aside class="sidebar col-sm-4">';
+
+                if( isset($this->params['layout_settings']['widgets']['right']) )
+
+                    foreach( $this->params['layout_settings']['widgets']['right'] as $wa_id )
+                        echo \common\components\Widgetareas::showSectionWidget($wa_id);
+
+                echo '</aside>';
 
             }
             ?>
-
         </div>
-        <?php
-        if( !isset($this->params['layout_settings']['settings']['section_right_active']) || $this->params['layout_settings']['settings']['section_right_active'] == 1 ){
-
-            echo '<aside class="sidebar col-sm-4">';
-
-            if( isset($this->params['layout_settings']['widgets']['right']) )
-
-                foreach( $this->params['layout_settings']['widgets']['right'] as $wa_id )
-                    echo \common\components\Widgetareas::showSectionWidget($wa_id);
-
-            echo '</aside>';
-
-        }
-        ?>
-    </div>
-</section>
+    </div><!-- W1 end here -->
+    <span id="back-top" class="fa fa-arrow-up"></span>
+</div>
 <?php
 if( !isset($this->params['layout_settings']['settings']['section_bottom_active']) || $this->params['layout_settings']['settings']['section_bottom_active'] == 1 ){
 
@@ -119,16 +134,11 @@ if( !isset($this->params['layout_settings']['settings']['section_bottom_active']
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="<?php echo Yii::$app->homeUrl;?>js/magnific-popup/jquery.magnific-popup.js"></script>
-<script src="<?php echo Yii::$app->homeUrl;?>js/modernizer/modernizr.js"></script>
-<script src="<?php echo Yii::$app->homeUrl;?>js/jquery.easing.js"></script>
-<script src="<?php echo Yii::$app->homeUrl;?>js/jquery.touchswipe.js"></script>
-<script src="<?php echo Yii::$app->homeUrl;?>js/md-slider.js"></script>
-<script src="<?php echo Yii::$app->homeUrl;?>js/jquery.customSelect.min.js"></script>
-<script src="<?php echo Yii::$app->homeUrl;?>js/jquery-ui.min.js"></script>
-<script src="<?php echo Yii::$app->homeUrl;?>js/validation.js"></script>
-<script type="text/javascript" src="<?php echo Yii::$app->homeUrl;?>js/inputmask.js"></script>
-<script type="text/javascript" src="<?php echo Yii::$app->homeUrl;?>js/script.js?token=<?= md5( filemtime(Yii::getAlias('@webroot').'/js/script.js') ) ?>"></script>
+
+<!-- include jQuery -->
+<script src="/js/plugins.js"></script>
+<!-- include jQuery -->
+<script src="/js/jquery.main.js"></script>
 <script type="text/javascript" src="<?php echo Yii::$app->homeUrl;?>js/widgets.js"></script>
 <?= $this->render("//elements/adminpanel") ?>
 </body>

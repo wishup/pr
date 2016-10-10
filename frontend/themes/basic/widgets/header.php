@@ -9,55 +9,49 @@ $params = yii::$app->params['settings'];
 $image = "logo2.png";
 ?>
 
-<header class="header clearfix">
-    <div class="container-lg">
-        <?php
-        if (!$user_id = \common\models\Users::user_id()) {
-            ?>
-            <a href="<?= Yii::$app->homeUrl ?>user/login" class="host-login"> <?= LiveEdit::text(__FILE__, 'Host login') ?> <i
-                    class="icon-arrow-right"></i></a>
-        <?php
-        } else {
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "2b97b509-b680-467f-b808-afc20b78e57f", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
-            $userInfo = \common\models\UserInfo::find()->where("user_id=" . $user_id)->one();
-            ?>
-            <!--<a href="/user/logout" class="host-login"><strong>Rami Ta</strong>--><? //= LiveEdit::text(__FILE__, 'Log Out') ?><!--</a>-->
+<!-- mt header style4 start here -->
+<header id="mt-header" class="style4">
+    <!-- mt bottom bar start here -->
+    <div class="mt-bottom-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- mt logo start here -->
+                    <div class="mt-logo"><a href="<?php echo Yii::$app->homeUrl; ?>"><img src="<?php echo Yii::$app->homeUrl; ?>images/logo_hanse_lite.png" alt="Hanse Lite" style="height:40px; width:auto;"></a></div>
+                    <!-- mt icon list start here -->
 
-            <div class="host-login dropdown">
-                <button class="text-primary dropdown-toggle" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <?= $userInfo->first_name . ' ' . $userInfo->last_name; ?>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li>
-                        <a href="<?php echo \yii\helpers\Url::toRoute('user/dashboard') ?>"><?= LiveEdit::text(__FILE__, 'Dashboard') ?></a>
-                    </li>
-                    <li>
-                        <a href="<?php echo \yii\helpers\Url::toRoute('user/changepassword') ?>"><?= LiveEdit::text(__FILE__, 'Change password') ?></a>
-                    </li>
-                    <li>
-                        <a href="<?php echo \yii\helpers\Url::toRoute('user/logout') ?>"><?= LiveEdit::text(__FILE__, 'Log Out') ?></a>
-                    </li>
-                </ul>
+                    <ul class="mt-icon-list">
+                        <li class="hidden-lg hidden-md">
+                            <a href="#" class="bar-opener mobile-toggle">
+                                <span class="bar"></span>
+                                <span class="bar small"></span>
+                                <span class="bar"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class='st_facebook_large' displayText='Facebook'></span>
+                            <span class='st_twitter_large' displayText='Tweet'></span>
+                            <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                            <span class='st_googleplus_large' displayText='Google +'></span>
+                        </li>
+                    </ul><!-- mt icon list end here -->
+                    <!-- navigation start here -->
+                    <nav id="nav">
+                        <?= \yii\widgets\Menu::widget([
+                            'options' => ['class' => 'head-menu nav'],
+                            'items' => $menuItems,
+
+                            'submenuTemplate' => "\n<div class='s-drop'><ul>\n{items}\n</ul></div>\n",
+                        ]); ?>
+                    </nav>
+                    <!-- mt icon list end here -->
+                </div>
             </div>
-        <?php
-        }
-        ?>
-        <div class="container">
-            <h1 class="logo"><a href="<?php echo Yii::$app->homeUrl; ?>"><img
-                        src="<?php echo Yii::$app->homeUrl; ?>images/<?php echo $image; ?>" alt="" title=""></a>
-            </h1>
-            <button class="menu-btn" id="menuButton">
-                <span class="burger-icon"></span>
-            </button>
-            <nav class="head-nav">
-                <?= \yii\widgets\Menu::widget([
-                    'options' => ['class' => 'head-menu nav'],
-                    'items' => $menuItems,
-                    'submenuTemplate' => "\n<ul class='subnav'>\n{items}\n</ul>\n",
-                ]); ?>
-            </nav>
         </div>
     </div>
-</header>
+    <!-- mt bottom bar end here -->
+    <span class="mt-side-over"></span>
+</header><!-- mt header style4 end here -->
