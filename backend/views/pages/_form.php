@@ -42,7 +42,6 @@ use yii\bootstrap\Button;
                         ],
                         'toolbar1' => "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image bb_media",
                         'toolbar2' => "print preview media | forecolor backcolor",
-                        "content_css" => "/css/main.min.css"
                     ]
                 ]) ?>
 

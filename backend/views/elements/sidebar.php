@@ -101,22 +101,6 @@ function renderSidebar( $items, $roles ){
     $items = [
         ["label"=>"Dashboard", "icon"=>"home", "url"=>Yii::$app->homeUrl."site/index"],
 
-        ["heading"=>"Tools", "roles"=>["Superadmin", "Admin"]],
-
-        ["label"=>"Communication center", "icon"=>"comment-o", "url"=>Yii::$app->homeUrl."mailing/index", "roles"=>["Superadmin", "Admin"], "items" =>[
-            ["label"=>"Messages", "icon"=>"comment-o", "url"=>Yii::$app->homeUrl."messaging/index", "roles"=>["Superadmin", "Admin"]],
-            ["label"=>"Emails", "icon"=>"envelope-o", "url"=>Yii::$app->homeUrl."mailing/index", "roles"=>["Superadmin", "Admin"]],
-        ]],
-        ["label"=>"Resources", "icon"=>"file-zip-o", "url"=>"#", "roles"=>["Superadmin", "Admin"], "items" => [
-            ["label"=>"Resources List", "icon"=>"file-pdf-o", "url"=>Yii::$app->homeUrl."resources/index", "roles"=>["Superadmin", "Admin"]],
-            ["label"=>"Resources Categories", "icon"=>"folder-open-o", "url"=>Yii::$app->homeUrl."resources-categories/index", "roles"=>["Superadmin", "Admin"]],
-        ]],
-        ["label"=>"Contact Requests", "icon"=>"book", "url"=>Yii::$app->homeUrl."contact-form/index", "roles"=>["Superadmin", "Admin"]],
-
-        ["heading"=>"Payment", "roles"=>["Superadmin", "Admin"]],
-
-        ["label"=>"Discounts", "icon"=>"ticket", "url"=>Yii::$app->homeUrl."discount", "roles"=>["Superadmin", "Admin"]],
-
         ["heading"=>"Shop", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Categories", "icon"=>"user", "url"=>Yii::$app->homeUrl."shopcategories/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Products", "icon"=>"user", "url"=>Yii::$app->homeUrl."shopproducts/index", "roles"=>["Superadmin", "Admin"]],
@@ -124,21 +108,20 @@ function renderSidebar( $items, $roles ){
 
         ["heading"=>"CMS", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Users", "icon"=>"user", "url"=>Yii::$app->homeUrl."users/index", "roles"=>["Superadmin", "Admin"]],
-        ["label"=>"Email Templates", "icon"=>"envelope-o", "url"=>"#", "roles"=>["Superadmin", "Admin"], "items" => [
-            ["label"=>"Email templates", "icon"=>"envelope-o", "url"=>Yii::$app->homeUrl."emailtemplates/index", "roles"=>["Superadmin", "Admin"]],
-            ["label"=>"Email Groups", "icon"=>"envelope", "url"=>Yii::$app->homeUrl."email-groups/index", "roles"=>["Superadmin", "Admin"]],
-            ["label"=>"Unsubscribe List", "icon"=>"minus-circle", "url"=>Yii::$app->homeUrl."unsubscribe/index", "roles"=>["Superadmin", "Admin"]],
-            ["label"=>"Unsubscribe Reasons", "icon"=>"minus-circle", "url"=>Yii::$app->homeUrl."unsubscribe-reasons/index", "roles"=>["Superadmin", "Admin"]],
-        ]],
+        ["label"=>"Gallery", "icon"=>"image", "url"=>Yii::$app->homeUrl."gallery/index", "roles"=>["Superadmin", "Admin"]],
+        ["label"=>"Blog", "icon"=>"file", "url"=>Yii::$app->homeUrl."posts/index", "roles"=>["Superadmin", "Admin"]],
+        ["label"=>"Email templates", "icon"=>"envelope-o", "url"=>Yii::$app->homeUrl."emailtemplates/index", "roles"=>["Superadmin", "Admin"]],
+       // ["label"=>"Email Templates", "icon"=>"envelope-o", "url"=>"#", "roles"=>["Superadmin", "Admin"], "items" => [
 
+            //["label"=>"Email Groups", "icon"=>"envelope", "url"=>Yii::$app->homeUrl."email-groups/index", "roles"=>["Superadmin", "Admin"]],
+            //["label"=>"Unsubscribe List", "icon"=>"minus-circle", "url"=>Yii::$app->homeUrl."unsubscribe/index", "roles"=>["Superadmin", "Admin"]],
+            //["label"=>"Unsubscribe Reasons", "icon"=>"minus-circle", "url"=>Yii::$app->homeUrl."unsubscribe-reasons/index", "roles"=>["Superadmin", "Admin"]],
+        //]],
+        ["label"=>"Contact Requests", "icon"=>"book", "url"=>Yii::$app->homeUrl."contact-form/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Media", "icon"=>"folder-open-o", "url"=>Yii::$app->homeUrl."media/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Sliders", "icon"=>"file-image-o", "url"=>Yii::$app->homeUrl."sliders/index", "roles"=>["Superadmin", "Content manager", "Admin"]],
         ["label"=>"Pages", "icon"=>"file-o", "url"=>Yii::$app->homeUrl."pages/index", "roles"=>["Superadmin", "Content manager", "Admin"]],
-        ["label"=>"FAQ", "icon"=>"question", "url"=>"#", "roles"=>["Superadmin", "Admin"], "items" => [
-            ["label"=>"FAQ List", "icon"=>"question", "url"=>Yii::$app->homeUrl."faq/index", "roles"=>["Superadmin", "Admin"]],
-            ["label"=>"FAQ Categories", "icon"=>"question", "url"=>Yii::$app->homeUrl."faq-categories/index", "roles"=>["Superadmin", "Admin"]],
-        ]],
-        ["label"=>"Glossary", "icon"=>"book", "url"=>Yii::$app->homeUrl."glossary/index", "roles"=>["Superadmin", "Admin"]],
+
         ["label"=>"Menu", "icon"=>"sitemap", "url"=>Yii::$app->homeUrl."menu/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Live Edit", "icon"=>"pencil", "url"=>Yii::$app->homeUrl."live-edit-texts/", "roles"=>["Superadmin", "Admin"]],
 
@@ -150,9 +133,9 @@ function renderSidebar( $items, $roles ){
         ["label"=>"Rewrite Rules", "icon"=>"paper-plane", "url"=>Yii::$app->homeUrl."seo-settings/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Layouts", "icon"=>"database", "url"=>Yii::$app->homeUrl."layouts/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Settings", "icon"=>"gears", "url"=>Yii::$app->homeUrl."settings/update/1", "roles"=>["Superadmin", "Admin"]],
-        ["label"=>"Subscribers", "icon"=>"puzzle-piece", "url"=>Yii::$app->homeUrl."subscribers/index", "roles"=>["Superadmin", "Admin"]],
+        //["label"=>"Subscribers", "icon"=>"puzzle-piece", "url"=>Yii::$app->homeUrl."subscribers/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Administrators", "icon"=>"trophy", "url"=>Yii::$app->homeUrl."user/index", "roles"=>["Superadmin"]],
-        ["label"=>"Help", "icon"=>"book", "url"=>Yii::$app->homeUrl."help/index", "roles"=>["Superadmin"]],
+        //["label"=>"Help", "icon"=>"book", "url"=>Yii::$app->homeUrl."help/index", "roles"=>["Superadmin"]],
 
     ];
 
