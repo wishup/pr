@@ -127,5 +127,5 @@ return [
         'Senior' => '#00574e',
         'Primary' => '#77557a',
     ],
-    "project_name" => "Sample Project"
+    "project_name" => "Hanse Lite"
 ];

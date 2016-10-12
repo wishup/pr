@@ -11,7 +11,7 @@ $session->open();
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-center">
-                <h1><?php if( $page->header != '' ){ ?><h1><?= \common\components\LiveEdit::field( $page->header, "\\common\\models\\Pages", $page->id, "header" ) ?></h1><?php } ?></h1>
+                <?php if( $page->header != '' ){ ?><h1><?= \common\components\LiveEdit::field( $page->header, "\\common\\models\\Pages", $page->id, "header" ) ?></h1><?php } ?>
                 <!-- nav class="breadcrumbs">
                     <ul class="list-unstyled">
                         <li><a href="index.html">home <i class="fa fa-angle-right"></i></a></li>

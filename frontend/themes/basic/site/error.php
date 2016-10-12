@@ -11,15 +11,28 @@ use common\components\LiveEdit;
 $this->title = $name;
 ?>
 
-<section>
-    <section class="inner-wrapper container-lg">
-        <div class="container">
-            <h1 class="title text-featured"><?= $exception->statusCode == '404' ?  LiveEdit::text(__FILE__, 'Sorry... The page you are looking for has moved.') : Html::encode($this->title) ?></h1>
-            <h2 class="caption text-primary2"><?= $exception->statusCode != '404' ? nl2br(Html::encode($message)) : LiveEdit::text(__FILE__, 'Please use the links below or contact customer support for additional assistance.') ?></h2>
-            <p class="text-primary2">  <?php echo LiveEdit::text(__FILE__, 'You will be automatically redirected to the homepage in a few seconds.')?></p>
+<section class="mt-contact-banner wow fadeInUp" data-wow-delay="0.4s" style="background-image: url(/images/img43.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1><?= \common\components\LiveEdit::text( __FILE__, "404" ) ?></h1>
+                <!-- nav class="breadcrumbs">
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">home <i class="fa fa-angle-right"></i></a></li>
+                        <li>About Us</li>
+                    </ul>
+                </nav -->
+            </div>
         </div>
-    </section>
+    </div>
 </section>
-<script>
-    setTimeout("window.location='/';", 13000);
-</script>
+<section class="mt-about-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                    <p><?= \common\components\LiveEdit::text( __FILE__, "Sorry, the page was not found" ) ?></p>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -30,6 +30,7 @@ return [
             'changepassword',
             'donationpayment'
         ],
+        'blog' => ['*'],
         'site' => ['*'],
         'liveedit' => ['*'],
     ]

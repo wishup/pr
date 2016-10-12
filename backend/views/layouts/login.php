@@ -51,10 +51,7 @@ AppAsset::register($this);
 <div class="menu-toggler sidebar-toggler"></div>
 <!-- END SIDEBAR TOGGLER BUTTON -->
 <!-- BEGIN LOGO -->
-<div class="logo">
-    <a href="<?= Yii::$app->homeUrl; ?>">
-        <img src="<?= Yii::$app->homeUrl; ?>assets/pages/img/logo-big-white.png" alt="" /> </a>
-</div>
+
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">

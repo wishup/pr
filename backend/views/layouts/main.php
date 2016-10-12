@@ -81,13 +81,12 @@ AppAsset::register($this);
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
-        <div class="page-logo">
+        <!--div class="page-logo">
             <a href="<?= Yii::$app->homeUrl; ?>">
                 <img src="<?= Yii::$app->homeUrl; ?>assets/layouts/layout4/img/logo-default.jpg" alt="logo" class="logo-default" style="margin-top:20px;" /> </a>
             <div class="menu-toggler sidebar-toggler">
-                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
-        </div>
+        </div -->
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
         <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>

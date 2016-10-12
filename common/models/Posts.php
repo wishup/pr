@@ -52,4 +52,16 @@ class Posts extends \yii\db\ActiveRecord
             'image' => 'Image',
         ];
     }
+
+    public function getCommentscount(){
+
+        return PostComments::find()->where("post_id=".$this->id." and status=1")->count();
+
+    }
+
+    public function getComments(){
+
+        return PostComments::find()->where("post_id=".$this->id." and status=1")->orderBy("date desc")->all();
+
+    }
 }

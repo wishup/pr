@@ -110,6 +110,7 @@ function renderSidebar( $items, $roles ){
         ["label"=>"Users", "icon"=>"user", "url"=>Yii::$app->homeUrl."users/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Gallery", "icon"=>"image", "url"=>Yii::$app->homeUrl."gallery/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Blog", "icon"=>"file", "url"=>Yii::$app->homeUrl."posts/index", "roles"=>["Superadmin", "Admin"]],
+        ["label"=>"Blog comments", "icon"=>"file", "url"=>Yii::$app->homeUrl."postcomments/index", "roles"=>["Superadmin", "Admin"]],
         ["label"=>"Email templates", "icon"=>"envelope-o", "url"=>Yii::$app->homeUrl."emailtemplates/index", "roles"=>["Superadmin", "Admin"]],
        // ["label"=>"Email Templates", "icon"=>"envelope-o", "url"=>"#", "roles"=>["Superadmin", "Admin"], "items" => [
 
